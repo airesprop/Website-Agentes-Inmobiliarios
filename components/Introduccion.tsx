@@ -4,50 +4,50 @@ import Reveal from './Reveal';
 
 const Introduccion: React.FC = () => {
   return (
-    <section id="de-que-se-trata" className="py-16 bg-[#F6F5F4] flex flex-col justify-center items-center w-full px-4 md:px-6">
+    <section id="de-que-se-trata" className="py-12 md:py-16 bg-[#F6F5F4] flex flex-col justify-center items-center w-full px-4 md:px-6">
         <div className="max-w-[1200px] w-full mx-auto flex flex-col items-center">
             
             {/* Header Section */}
-            <div className="text-center mb-12 max-w-3xl">
+            <div className="text-center mb-10 md:mb-12 max-w-3xl">
                 <Reveal>
-                    <h2 className="text-5xl md:text-7xl font-bold tracking-tighter text-[#050505] mb-6 font-sans">
+                    <h2 className="text-4xl md:text-5xl lg:text-7xl font-bold tracking-tighter text-[#050505] mb-4 md:mb-6 font-sans">
                         AiresProp
                     </h2>
-                    <p className="text-[#37352f] text-xl md:text-2xl leading-relaxed font-light max-w-2xl mx-auto text-gray-600">
+                    <p className="text-[#37352f] text-lg md:text-xl lg:text-2xl leading-relaxed font-light max-w-2xl mx-auto text-gray-600">
                         Tu plataforma para retener clientes compradores y cerrar más operaciones.
                     </p>
                 </Reveal>
             </div>
 
             {/* NOTION STYLE GRID */}
-            <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-6 mb-16 items-stretch">
+            <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6 mb-12 md:mb-16 items-stretch">
                 
                 {/* CARD 1 */}
                 <Reveal className="h-full" delay={0.2}>
-                    <div className="bg-white rounded-[32px] border border-gray-200 shadow-sm overflow-hidden flex flex-col group h-full min-h-[500px]">
+                    <div className="bg-white rounded-[24px] md:rounded-[32px] border border-gray-200 shadow-sm overflow-hidden flex flex-col group h-full min-h-[450px] md:min-h-[500px]">
                         {/* Visual Area - Top */}
-                        <div className="h-[280px] lg:flex-1 w-full bg-[#F4F2EE] relative overflow-hidden">
+                        <div className="h-[240px] md:h-[280px] lg:flex-1 w-full bg-[#F4F2EE] relative overflow-hidden">
                             <img 
                                 src="https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=2670&auto=format&fit=crop" 
                                 alt="Abstract Art" 
                                 className="w-full h-full object-cover opacity-90 mix-blend-multiply transition-transform duration-1000 group-hover:scale-105"
                             />
-                            <div className="absolute bottom-6 left-8 w-14 h-14 bg-[#337EA9] rounded-2xl flex items-center justify-center text-white shadow-xl z-10">
-                                <Shield size={28} strokeWidth={2} />
+                            <div className="absolute bottom-6 left-8 w-12 h-12 md:w-14 md:h-14 bg-[#337EA9] rounded-2xl flex items-center justify-center text-white shadow-xl z-10">
+                                <Shield size={24} strokeWidth={2} className="md:w-7 md:h-7" />
                             </div>
                         </div>
 
                         {/* Content Area - Bottom */}
-                        <div className="p-8 flex flex-col gap-4 relative z-20 bg-white border-t border-gray-50">
-                            <h3 className="text-3xl font-bold text-[#050505] tracking-tight">
+                        <div className="p-6 md:p-8 flex flex-col gap-3 md:gap-4 relative z-20 bg-white border-t border-gray-50 flex-grow">
+                            <h3 className="text-2xl md:text-3xl font-bold text-[#050505] tracking-tight">
                                 Blindaje de Comisiones
                             </h3>
-                            <p className="text-lg text-gray-500 leading-relaxed font-medium">
+                            <p className="text-base md:text-lg text-gray-500 leading-relaxed font-medium">
                             Tus clientes ven toda la info, pero con <strong>TU contacto</strong>. Nadie ve al vendedor original.
                             </p>
                             
-                            <div className="mt-4">
-                                <button className="inline-flex items-center justify-center px-6 py-3 rounded-xl bg-gray-50 text-[#050505] text-sm font-bold hover:bg-gray-100 transition-colors border border-gray-200">
+                            <div className="mt-2 md:mt-4">
+                                <button className="inline-flex items-center justify-center px-5 py-2.5 md:px-6 md:py-3 rounded-xl bg-gray-50 text-[#050505] text-sm font-bold hover:bg-gray-100 transition-colors border border-gray-200">
                                     Ver ejemplo
                                 </button>
                             </div>
@@ -56,32 +56,32 @@ const Introduccion: React.FC = () => {
                 </Reveal>
 
                 {/* RIGHT COLUMN */}
-                <div className="flex flex-col gap-6 h-full">
+                <div className="flex flex-col gap-4 md:gap-6 h-full">
 
                     {/* CARD 2 */}
                     <Reveal delay={0.3} className="flex-1">
-                        <div className="bg-white rounded-[32px] border border-gray-200 shadow-sm overflow-hidden flex flex-col md:flex-row items-center h-full min-h-[240px] group p-8 pb-0 md:pb-8 md:pr-0">
-                            <div className="flex-1 flex flex-col justify-center items-start gap-3 mb-6 md:mb-0">
+                        <div className="bg-white rounded-[24px] md:rounded-[32px] border border-gray-200 shadow-sm overflow-hidden flex flex-col md:flex-row items-center h-full min-h-[auto] md:min-h-[240px] group p-6 pb-0 md:p-8 md:pb-8 md:pr-0">
+                            <div className="flex-1 flex flex-col justify-center items-start gap-3 mb-6 md:mb-0 w-full">
                                 <div className="mb-2 w-10 h-10 bg-orange-50 rounded-xl flex items-center justify-center text-orange-600">
                                     <Zap size={20} strokeWidth={2} />
                                 </div>
-                                <h3 className="text-2xl font-bold text-[#050505] tracking-tight">
+                                <h3 className="text-xl md:text-2xl font-bold text-[#050505] tracking-tight">
                                     Infraestructura
                                 </h3>
-                                <p className="text-[15px] text-gray-500 leading-relaxed font-medium max-w-[240px]">
+                                <p className="text-sm md:text-[15px] text-gray-500 leading-relaxed font-medium max-w-full md:max-w-[240px]">
                                     Búsqueda autónoma 24/7. Te avisa de nuevas oportunidades al instante.
                                 </p>
                             </div>
                             
                             {/* Asset Area */}
-                            <div className="w-full md:w-1/2 h-[200px] bg-[#F7F7F5] rounded-tl-2xl border-t border-l border-gray-200 relative overflow-hidden shadow-inner translate-y-4 md:translate-y-8 md:translate-x-4">
-                                <div className="p-5 space-y-4">
+                            <div className="w-full md:w-1/2 h-[180px] md:h-[200px] bg-[#F7F7F5] rounded-t-2xl md:rounded-tl-2xl md:rounded-tr-none border-t border-x md:border-l md:border-x-0 border-gray-200 relative overflow-hidden shadow-inner translate-y-4 md:translate-y-8 md:translate-x-4">
+                                <div className="p-4 md:p-5 space-y-3 md:space-y-4">
                                     <div className="flex items-center justify-between text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-2">
                                         <span>Nuevas Propiedades</span>
                                         <Search size={10} />
                                     </div>
                                     <div className="bg-white p-3 rounded-xl border border-gray-100 shadow-sm flex items-center gap-3">
-                                        <div className="w-8 h-8 rounded-lg bg-blue-50 flex items-center justify-center text-blue-500">
+                                        <div className="w-8 h-8 rounded-lg bg-blue-50 flex items-center justify-center text-blue-500 flex-shrink-0">
                                             <Search size={14} />
                                         </div>
                                         <div className="flex-1 space-y-2">
@@ -97,28 +97,28 @@ const Introduccion: React.FC = () => {
 
                     {/* CARD 3 */}
                     <Reveal delay={0.4} className="flex-1">
-                        <div className="bg-white rounded-[32px] border border-gray-200 shadow-sm overflow-hidden flex flex-col md:flex-row items-center h-full min-h-[240px] group p-8 pb-0 md:pb-8 md:pr-0">
-                            <div className="flex-1 flex flex-col justify-center items-start gap-3 mb-6 md:mb-0">
+                        <div className="bg-white rounded-[24px] md:rounded-[32px] border border-gray-200 shadow-sm overflow-hidden flex flex-col md:flex-row items-center h-full min-h-[auto] md:min-h-[240px] group p-6 pb-0 md:p-8 md:pb-8 md:pr-0">
+                            <div className="flex-1 flex flex-col justify-center items-start gap-3 mb-6 md:mb-0 w-full">
                                 <div className="mb-2 w-10 h-10 bg-purple-50 rounded-xl flex items-center justify-center text-purple-600">
                                     <Calendar size={20} strokeWidth={2} />
                                 </div>
-                                <h3 className="text-2xl font-bold text-[#050505] tracking-tight">
+                                <h3 className="text-xl md:text-2xl font-bold text-[#050505] tracking-tight">
                                     Tu Marca
                                 </h3>
-                                <p className="text-[15px] text-gray-500 leading-relaxed font-medium max-w-[240px]">
+                                <p className="text-sm md:text-[15px] text-gray-500 leading-relaxed font-medium max-w-full md:max-w-[240px]">
                                     Tus clientes comparan, marcan favoritos y piden visitas en TU plataforma.
                                 </p>
                             </div>
                             
                             {/* Asset Area */}
-                            <div className="w-full md:w-1/2 h-[200px] bg-[#fff] rounded-tl-2xl border-t border-l border-gray-200 relative overflow-hidden shadow-inner translate-y-4 md:translate-y-8 md:translate-x-4">
+                            <div className="w-full md:w-1/2 h-[180px] md:h-[200px] bg-[#fff] rounded-t-2xl md:rounded-tl-2xl md:rounded-tr-none border-t border-x md:border-l md:border-x-0 border-gray-200 relative overflow-hidden shadow-inner translate-y-4 md:translate-y-8 md:translate-x-4">
                                 <div className="p-0 font-sans">
-                                    <div className="bg-[#FAFAFA] border-b border-gray-100 p-4 flex justify-between items-center">
+                                    <div className="bg-[#FAFAFA] border-b border-gray-100 p-3 md:p-4 flex justify-between items-center">
                                         <span className="text-[10px] font-bold text-gray-700">Octubre 2025</span>
                                     </div>
                                     <div className="grid grid-cols-7 gap-px bg-gray-50">
                                         {Array.from({length: 21}).map((_, i) => (
-                                            <div key={i} className={`bg-white h-8 flex items-center justify-center text-[10px] relative ${i === 10 ? 'bg-red-50 text-red-600 font-bold' : 'text-gray-400 font-medium'}`}>
+                                            <div key={i} className={`bg-white h-7 md:h-8 flex items-center justify-center text-[10px] relative ${i === 10 ? 'bg-red-50 text-red-600 font-bold' : 'text-gray-400 font-medium'}`}>
                                                 {i + 1}
                                                 {i === 10 && <div className="absolute w-1 h-1 bg-red-500 rounded-full bottom-1"></div>}
                                             </div>
@@ -183,13 +183,13 @@ const FeatureCarousel: React.FC = () => {
     };
 
     return (
-        <div className="w-full mt-6">
+        <div className="w-full mt-2 md:mt-6">
             {/* Unified Container Card */}
-            <div className="bg-white rounded-[32px] border border-gray-200 shadow-xl flex flex-col lg:flex-row overflow-hidden min-h-[500px] lg:h-[500px]">
+            <div className="bg-white rounded-[24px] md:rounded-[32px] border border-gray-200 shadow-xl flex flex-col lg:flex-row overflow-hidden min-h-[auto] lg:h-[500px]">
                 
                 {/* LEFT SIDE: Content List */}
                 <div 
-                    className="lg:w-[45%] flex flex-col justify-center bg-white p-6 lg:p-8 relative z-10"
+                    className="w-full lg:w-[45%] flex flex-col justify-center bg-white p-4 md:p-6 lg:p-8 relative z-10 order-2 lg:order-1"
                 >
                     <div className="flex flex-col gap-0 relative">
                         {tabs.map((tab, idx) => {
@@ -199,19 +199,13 @@ const FeatureCarousel: React.FC = () => {
                                     key={tab.id}
                                     onClick={() => setActiveTab(idx)}
                                     className={`
-                                        relative text-left w-full pl-8 pr-4 py-4 rounded-xl transition-colors duration-300 ease-out group outline-none
+                                        relative text-left w-full pl-6 md:pl-8 pr-4 py-3 md:py-4 rounded-xl transition-colors duration-300 ease-out group outline-none
                                         ${isActive ? 'bg-transparent' : 'hover:bg-gray-50/50'}
                                     `}
                                 >
-                                    {/* 
-                                        THE PROGRESS LINE
-                                        - Shows ONLY on active tab.
-                                        - Consists of a gray track and a black filling bar.
-                                        - Driven by CSS keyframe animation for perfect 6s timing.
-                                        - onAnimationEnd triggers nextTab, serving as the auto-play timer.
-                                    */}
+                                    {/* PROGRESS LINE */}
                                     {isActive && (
-                                        <div className="absolute left-0 top-5 bottom-5 w-1 bg-gray-200 rounded-full overflow-hidden">
+                                        <div className="absolute left-0 top-4 bottom-4 md:top-5 md:bottom-5 w-1 bg-gray-200 rounded-full overflow-hidden">
                                             <div 
                                                 className="w-full bg-[#050505] rounded-full animate-progress origin-top"
                                                 onAnimationEnd={nextTab}
@@ -219,8 +213,8 @@ const FeatureCarousel: React.FC = () => {
                                         </div>
                                     )}
 
-                                    <div className="flex flex-col gap-2">
-                                        <h3 className={`text-lg md:text-xl font-sans tracking-tight transition-colors duration-300 ${isActive ? 'text-[#050505] font-bold' : 'text-gray-400 font-medium group-hover:text-gray-600'}`}>
+                                    <div className="flex flex-col gap-1 md:gap-2">
+                                        <h3 className={`text-base md:text-xl font-sans tracking-tight transition-colors duration-300 ${isActive ? 'text-[#050505] font-bold' : 'text-gray-400 font-medium group-hover:text-gray-600'}`}>
                                             {tab.title}
                                         </h3>
                                         
@@ -232,7 +226,7 @@ const FeatureCarousel: React.FC = () => {
                                             `}
                                         >
                                             <div className="overflow-hidden">
-                                                <p className="text-[15px] text-gray-500 leading-relaxed font-medium pr-2">
+                                                <p className="text-sm md:text-[15px] text-gray-500 leading-relaxed font-medium pr-2">
                                                     {tab.desc}
                                                 </p>
                                             </div>
@@ -246,7 +240,7 @@ const FeatureCarousel: React.FC = () => {
 
                 {/* RIGHT SIDE: Image/Carousel */}
                 <div 
-                    className="lg:w-[55%] bg-[#F7F7F5] relative h-[350px] lg:h-full border-t lg:border-t-0 lg:border-l border-gray-100 overflow-hidden group"
+                    className="w-full lg:w-[55%] bg-[#F7F7F5] relative h-[250px] md:h-[350px] lg:h-full border-b lg:border-b-0 lg:border-l border-gray-100 overflow-hidden group order-1 lg:order-2"
                 >
                     
                     {/* Images */}
@@ -265,20 +259,20 @@ const FeatureCarousel: React.FC = () => {
                     ))}
                     
                     {/* Navigation Controls (Overlay) */}
-                    <div className="absolute bottom-8 right-8 z-20 flex gap-4">
+                    <div className="absolute bottom-4 right-4 md:bottom-8 md:right-8 z-20 flex gap-3 md:gap-4">
                         <button 
                             onClick={(e) => { e.stopPropagation(); prevTab(); }} 
-                            className="w-12 h-12 flex items-center justify-center rounded-full bg-white/90 hover:bg-white text-[#050505] shadow-lg backdrop-blur-sm border border-white/20 transition-all hover:scale-110 active:scale-95 group"
+                            className="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-full bg-white/90 hover:bg-white text-[#050505] shadow-lg backdrop-blur-sm border border-white/20 transition-all hover:scale-110 active:scale-95 group"
                             aria-label="Previous slide"
                         >
-                            <ChevronLeft size={20} className="group-hover:-translate-x-0.5 transition-transform" />
+                            <ChevronLeft size={18} className="md:w-5 md:h-5 group-hover:-translate-x-0.5 transition-transform" />
                         </button>
                         <button 
                             onClick={(e) => { e.stopPropagation(); nextTab(); }} 
-                            className="w-12 h-12 flex items-center justify-center rounded-full bg-[#050505] hover:bg-[#1a1a1a] text-white shadow-lg transition-all hover:scale-110 active:scale-95 group"
+                            className="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-full bg-[#050505] hover:bg-[#1a1a1a] text-white shadow-lg transition-all hover:scale-110 active:scale-95 group"
                             aria-label="Next slide"
                         >
-                            <ChevronRight size={20} className="group-hover:translate-x-0.5 transition-transform" />
+                            <ChevronRight size={18} className="md:w-5 md:h-5 group-hover:translate-x-0.5 transition-transform" />
                         </button>
                     </div>
                 </div>

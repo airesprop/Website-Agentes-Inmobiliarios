@@ -3,11 +3,11 @@ import Reveal from './Reveal';
 
 const FooterCTA: React.FC = () => {
   return (
-    <section className="py-20 bg-white">
-      <div className="max-w-[1400px] mx-auto px-6">
+    <section className="py-12 md:py-20 bg-white">
+      <div className="max-w-[1400px] mx-auto px-4 md:px-6">
         <Reveal>
             {/* Main Card Container */}
-            <div className="relative w-full rounded-[2.5rem] overflow-hidden min-h-[600px] flex flex-col items-center justify-center text-center p-8 md:p-16 lg:p-20 text-white shadow-2xl">
+            <div className="relative w-full rounded-[2rem] md:rounded-[2.5rem] overflow-hidden min-h-[auto] md:min-h-[600px] flex flex-col items-center justify-center text-center p-8 md:p-16 lg:p-20 text-white shadow-2xl">
             
             {/* Background Image & Overlay */}
             <div className="absolute inset-0 z-0 pointer-events-none">
@@ -22,45 +22,45 @@ const FooterCTA: React.FC = () => {
             </div>
 
             {/* Content Wrapper */}
-            <div className="relative z-10 flex flex-col items-center max-w-4xl mx-auto">
+            <div className="relative z-10 flex flex-col items-center max-w-4xl mx-auto py-12 md:py-0">
                 
                 <Reveal delay={0.2}>
-                    <div className="inline-flex items-center gap-4 pl-3 pr-8 py-3 rounded-full border border-white/20 bg-white/10 backdrop-blur-md mb-10 shadow-sm">
+                    <div className="inline-flex items-center gap-3 md:gap-4 pl-2 pr-6 md:pl-3 md:pr-8 py-2 md:py-3 rounded-full border border-white/20 bg-white/10 backdrop-blur-md mb-8 md:mb-10 shadow-sm scale-90 md:scale-100">
                     <div className="flex -space-x-3">
                         {[1, 2, 3].map((i) => (
                         <img 
                             key={i} 
                             src={`https://i.pravatar.cc/100?img=${i + 15}`} 
                             alt="User" 
-                            className="w-10 h-10 rounded-full border-2 border-[#02182B] object-cover"
+                            className="w-8 h-8 md:w-10 md:h-10 rounded-full border-2 border-[#02182B] object-cover"
                         />
                         ))}
                     </div>
-                    <span className="text-lg font-semibold text-white tracking-wide">We have AI + Product Agencies</span>
+                    <span className="text-sm md:text-lg font-semibold text-white tracking-wide">We have AI + Product Agencies</span>
                     </div>
                 </Reveal>
 
                 <Reveal delay={0.3}>
-                    <h2 className="text-6xl md:text-7xl lg:text-8xl font-bold tracking-tighter text-white mb-8 leading-[0.95]">
+                    <h2 className="text-4xl md:text-6xl lg:text-8xl font-bold tracking-tighter text-white mb-6 md:mb-8 leading-[1.1] md:leading-[0.95]">
                     Get started for free
                     </h2>
                 </Reveal>
 
                 <Reveal delay={0.4}>
-                    <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-14 leading-relaxed font-medium">
+                    <p className="text-base md:text-lg lg:text-xl text-gray-300 max-w-2xl mx-auto mb-10 md:mb-14 leading-relaxed font-medium px-4">
                     From idea to investment, MVP to market — we adapt to your goals and build around what your product truly needs.
                     </p>
                 </Reveal>
 
                 {/* Buttons & Arrow Wrapper */}
                 <Reveal delay={0.5}>
-                    <div className="relative flex flex-col sm:flex-row items-center gap-6">
+                    <div className="relative flex flex-col sm:flex-row items-center gap-4 md:gap-6 w-full sm:w-auto">
                         
-                        <button className="px-10 py-5 bg-white text-gray-900 rounded-full font-bold text-sm uppercase tracking-widest hover:bg-gray-100 transition-all hover:scale-105 shadow-xl hover:shadow-2xl">
+                        <button className="w-full sm:w-auto px-8 md:px-10 py-4 md:py-5 bg-white text-gray-900 rounded-full font-bold text-xs md:text-sm uppercase tracking-widest hover:bg-gray-100 transition-all hover:scale-105 shadow-xl hover:shadow-2xl">
                             Get Started
                         </button>
                         
-                        <button className="px-10 py-5 bg-transparent border-2 border-white/30 text-white rounded-full font-bold text-sm uppercase tracking-widest hover:bg-white/10 hover:border-white transition-all hover:shadow-lg backdrop-blur-sm">
+                        <button className="w-full sm:w-auto px-8 md:px-10 py-4 md:py-5 bg-transparent border-2 border-white/30 text-white rounded-full font-bold text-xs md:text-sm uppercase tracking-widest hover:bg-white/10 hover:border-white transition-all hover:shadow-lg backdrop-blur-sm">
                             Explore Pricing Plan
                         </button>
 
