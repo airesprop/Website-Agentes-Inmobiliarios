@@ -4,29 +4,37 @@ import Reveal from './Reveal';
 
 const faqs = [
   {
-    question: "Is there a free trial available?",
-    answer: "Yes, you can try us for free for 30 days. If you want, we’ll provide you with a free, personalized 30-minute onboarding call to get you up and running as soon as possible."
+    question: "¿Cuánto cuesta?",
+    answer: "Todas las personas que entren en el acceso anticipado van a recibir un mes entero sin costo, con todas las funcionalidades. Pasado ese mes, podrás seguir teniendo acceso a la plataforma y a sus funcionalidades por $20 USD/mes."
   },
   {
-    question: "Can I change my plan later?",
-    answer: "Of course. Our pricing scales with your company. Chat to our friendly team to find a solution that works for you."
+    question: "¿Qué pasa con mis clientes actuales?",
+    answer: "Son tuyos. La plataforma solo protege que no se te escapen. Ellos crean su cuenta en tu portal, configuran sus preferencias y, a partir de ahí, el sistema le envía al agente posibles propiedades que sean de interés para sus clientes. Dentro de la plataforma, tus clientes ven tu contacto, no el del agente vendedor."
   },
   {
-    question: "What is your cancellation policy?",
-    answer: "We understand that things change. You can cancel your plan at any time and we’ll refund you the difference already paid."
+    question: "¿Tengo que compartir comisión?",
+    answer: "Sí. Si no estás dispuesto a compartir comisión, esto no es para vos. Todas las propiedades en AiresProp tienen acuerdo de comisión compartida. La filosofía es: mejor 50% de comisión que $0 USD."
   },
   {
-    question: "Can other info be added to an invoice?",
-    answer: "Yes, you can add as much information as you need to your invoices. This includes company name, address, and VAT number."
+    question: "¿Cuántas propiedades hay en la plataforma?",
+    answer: "Estamos integrando inmobiliarias activamente. Para el lanzamiento, esperamos tener aproximadamente el 75% de las propiedades en venta del mercado inmobiliario que sí comparten comisión."
   },
   {
-    question: "How does billing work?",
-    answer: "Plans are per workspace, not per account. You can upgrade one workspace, and still have any number of free workspaces."
+    question: "¿Cuándo estará listo?",
+    answer: "Primer trimestre 2025. Los de lista de espera entran primero. Te avisamos por email 1 semana antes del lanzamiento oficial."
   },
   {
-    question: "How do I change my account email?",
-    answer: "You can change the email address associated with your account by going to your Account Settings page."
-  }
+    question: "¿Qué pasa si no me sirve después de empezar a usarlo?",
+    answer: "Cancelás tu suscripción en cualquier momento sin preguntas. No hay contratos anuales ni compromisos. Si no te genera valor, te vas y listo."
+  },
+  {
+    question: "¿Puedo tener múltiples clientes al mismo tiempo?",
+    answer: "Sí. Capacidad ilimitada. Cada cliente tiene su propio perfil, preferencias y búsquedas activas. Vos gestionás todo desde tu panel de administración."
+  },
+  {
+    question: "Si me anoto en lista de espera, ¿tengo que pagar algo hoy?",
+    answer: "No. Cero. Solo dejás tu email. Te avisamos cuando abramos la plataforma. Ahí decidís si querés entrar o no. Compromiso cero."
+  },
 ];
 
 const FaqSection: React.FC = () => {
@@ -37,14 +45,11 @@ const FaqSection: React.FC = () => {
   };
 
   return (
-    <section id="preguntas" className="py-24 bg-white">
+    <section id="preguntas" className="py-24 bg-white" style={{ paddingTop: '67px', paddingBottom: '67px' }}>
       <div className="max-w-4xl mx-auto px-6">
         <div className="text-center mb-16">
           <Reveal>
-             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 tracking-tight">Frequently asked questions</h2>
-          </Reveal>
-          <Reveal delay={0.1}>
-             <p className="text-lg text-gray-500">Everything you need to know about the product and billing.</p>
+             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 tracking-tight">Preguntas Frecuentes</h2>
           </Reveal>
         </div>
 

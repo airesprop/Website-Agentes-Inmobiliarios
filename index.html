@@ -1,23 +1,248 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="https://cdn.prod.website-files.com/68a40fb00b41cab48b971d94/68a89327db1cce09d4507304_svgviewer-output.svg" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="shortcut icon" type="image/png" href="/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#ffffff" />
     <meta
       name="description"
-      content="Airesprop - Work Smarter, Not Harder"
+      content="Airesprop - Agentes Inmobiliarios"
     />
-    <title>Airesprop - Hero Section</title>
+    <title>Airesprop - Agentes Inmobiliarios</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
+      /* ============================================
+         FUENTE RICCIONE - DEFINICIONES @font-face
+         ============================================ */
+      
+      /* Extra Light */
+      @font-face {
+        font-family: 'Riccione';
+        src: url('/fonts/Riccione Xlight.ttf') format('truetype');
+        font-weight: 200;
+        font-style: normal;
+        font-display: swap;
+      }
+      
+      @font-face {
+        font-family: 'Riccione';
+        src: url('/fonts/Riccione Xlight Italic.ttf') format('truetype'),
+             url('/fonts/Riccione Xlight Italic.otf') format('opentype');
+        font-weight: 200;
+        font-style: italic;
+        font-display: swap;
+      }
+
+      /* Light */
+      @font-face {
+        font-family: 'Riccione';
+        src: url('/fonts/Riccione Light.ttf') format('truetype');
+        font-weight: 300;
+        font-style: normal;
+        font-display: swap;
+      }
+      
+      @font-face {
+        font-family: 'Riccione';
+        src: url('/fonts/Riccione Light Italic.ttf') format('truetype');
+        font-weight: 300;
+        font-style: italic;
+        font-display: swap;
+      }
+
+      /* Regular */
+      @font-face {
+        font-family: 'Riccione';
+        src: url('/fonts/Riccione Regular.ttf') format('truetype');
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+      }
+      
+      @font-face {
+        font-family: 'Riccione';
+        src: url('/fonts/Riccione Regular Italic.ttf') format('truetype');
+        font-weight: 400;
+        font-style: italic;
+        font-display: swap;
+      }
+
+      /* Medium */
+      @font-face {
+        font-family: 'Riccione';
+        src: url('/fonts/Riccione Medium.ttf') format('truetype');
+        font-weight: 500;
+        font-style: normal;
+        font-display: swap;
+      }
+      
+      @font-face {
+        font-family: 'Riccione';
+        src: url('/fonts/Riccione Medium Italic.ttf') format('truetype');
+        font-weight: 500;
+        font-style: italic;
+        font-display: swap;
+      }
+
+      /* DemiBold */
+      @font-face {
+        font-family: 'Riccione';
+        src: url('/fonts/Riccione DemiBold.ttf') format('truetype');
+        font-weight: 600;
+        font-style: normal;
+        font-display: swap;
+      }
+      
+      @font-face {
+        font-family: 'Riccione';
+        src: url('/fonts/Riccione DemiBold Italic.ttf') format('truetype');
+        font-weight: 600;
+        font-style: italic;
+        font-display: swap;
+      }
+
+      /* Bold */
+      @font-face {
+        font-family: 'Riccione';
+        src: url('/fonts/Riccione Bold.ttf') format('truetype');
+        font-weight: 700;
+        font-style: normal;
+        font-display: swap;
+      }
+      
+      @font-face {
+        font-family: 'Riccione';
+        src: url('/fonts/Riccione Bold Italic.ttf') format('truetype');
+        font-weight: 700;
+        font-style: italic;
+        font-display: swap;
+      }
+
+      /* ExtraBold */
+      @font-face {
+        font-family: 'Riccione';
+        src: url('/fonts/Riccione ExtraBold.ttf') format('truetype');
+        font-weight: 800;
+        font-style: normal;
+        font-display: swap;
+      }
+      
+      @font-face {
+        font-family: 'Riccione';
+        src: url('/fonts/Riccione ExtraBold Italic.ttf') format('truetype'),
+             url('/fonts/Riccione Extra Bold Italic.otf') format('opentype');
+        font-weight: 800;
+        font-style: italic;
+        font-display: swap;
+      }
+
+      /* Extra Bold (Xbold) */
+      @font-face {
+        font-family: 'Riccione';
+        src: url('/fonts/Riccione Random Xbold.ttf') format('truetype');
+        font-weight: 900;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      /* ============================================
+         RICCIONE SERIAL - VARIANTES SERIAL
+         ============================================ */
+      
+      /* Serial ExtraLight */
+      @font-face {
+        font-family: 'Riccione Serial';
+        src: url('/fonts/Riccione Serial ExtraLight Regular.ttf') format('truetype');
+        font-weight: 200;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      /* Serial Light */
+      @font-face {
+        font-family: 'Riccione Serial';
+        src: url('/fonts/Riccione Serial Light Regular.ttf') format('truetype');
+        font-weight: 300;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      /* Serial Regular */
+      @font-face {
+        font-family: 'Riccione Serial';
+        src: url('/fonts/Riccione Serial Regular.ttf') format('truetype');
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+      }
+      
+      @font-face {
+        font-family: 'Riccione Serial';
+        src: url('/fonts/Riccione-Serial-RegularItalic DB.ttf') format('truetype');
+        font-weight: 400;
+        font-style: italic;
+        font-display: swap;
+      }
+
+      /* Serial Medium */
+      @font-face {
+        font-family: 'Riccione Serial';
+        src: url('/fonts/Riccione Serial Medium Regular.ttf') format('truetype');
+        font-weight: 500;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      /* Serial Bold */
+      @font-face {
+        font-family: 'Riccione Serial';
+        src: url('/fonts/Riccione Serial Bold.ttf') format('truetype');
+        font-weight: 700;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      /* Serial ExtraBold */
+      @font-face {
+        font-family: 'Riccione Serial';
+        src: url('/fonts/Riccione Serial ExtraBold Regular.ttf') format('truetype');
+        font-weight: 800;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      /* Serial Heavy */
+      @font-face {
+        font-family: 'Riccione Serial';
+        src: url('/fonts/Riccione Serial Heavy Regular.ttf') format('truetype');
+        font-weight: 900;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      /* ============================================
+         ESTILOS BASE Y CLASES UTILITARIAS
+         ============================================ */
+      
       body {
         font-family: 'Inter', sans-serif;
       }
+      
+      /* Clase para usar Riccione */
+      .font-riccione {
+        font-family: 'Riccione', sans-serif;
+      }
+      
+      /* Clase para usar Riccione Serial */
+      .font-riccione-serial {
+        font-family: 'Riccione Serial', sans-serif;
+      }
+      
       .font-serif-display {
         font-family: 'Instrument Serif', serif;
       }
@@ -69,19 +294,25 @@
       .animate-progress {
         animation: progressFill 6000ms linear forwards;
       }
+
+      /* SLIDE DOWN ANIMATION */
+      @keyframes slideDown {
+        from { 
+          opacity: 0; 
+          transform: translateY(-20px); 
+        }
+        to { 
+          opacity: 1; 
+          transform: translateY(0); 
+        }
+      }
+      .animate-slide-down {
+        animation: slideDown 0.5s ease-out forwards;
+      }
     </style>
-  <script type="importmap">
-{
-  "imports": {
-    "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
-    "react/": "https://esm.sh/react@^19.2.3/",
-    "react": "https://esm.sh/react@^19.2.3"
-  }
-}
-</script>
 </head>
   <body class="bg-white text-gray-900 antialiased overflow-x-hidden">
     <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
   </body>
 </html>

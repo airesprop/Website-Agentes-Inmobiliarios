@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowRight, Menu, X, CircleDot, BookOpen, DollarSign } from 'lucide-react';
+import { ArrowUpRight, ArrowRight, Menu, X, Lightbulb, Sparkles, HelpCircle } from 'lucide-react';
+import WaitlistModal from './WaitlistModal';
 
 const Navbar: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -37,14 +38,6 @@ const Navbar: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [lastScrollY, mobileMenuOpen]);
 
-  // Close modal on Escape key
-  useEffect(() => {
-    const handleEsc = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') setShowModal(false);
-    };
-    window.addEventListener('keydown', handleEsc);
-    return () => window.removeEventListener('keydown', handleEsc);
-  }, []);
 
   const handleScrollTo = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
     e.preventDefault();
@@ -52,6 +45,11 @@ const Navbar: React.FC = () => {
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
+  };
+
+  const handleScrollToTop = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
@@ -65,8 +63,22 @@ const Navbar: React.FC = () => {
       >
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between relative">
           {/* Logo */}
-          <a href="#" className="text-2xl font-bold tracking-tight z-50 relative text-black">
-            AiresProp
+          <a 
+            href="#" 
+            onClick={handleScrollToTop}
+            className="z-50 relative flex items-center gap-2 group cursor-pointer"
+          >
+            <img 
+              src="/logo-AP.png" 
+              alt="AiresProp Logo" 
+              className="h-6 w-auto object-contain flex-shrink-0 transition-transform group-hover:scale-105"
+            />
+            <span 
+              className="text-black text-2xl font-bold font-riccione transition-colors group-hover:text-[#00401a]"
+              style={{ fontFamily: 'Riccione, sans-serif', fontWeight: 700, fontSize: '25px' }}
+            >
+              AiresProp
+            </span>
           </a>
 
           {/* Desktop Menu - Centered absolutely relative to the container */}
@@ -77,7 +89,7 @@ const Navbar: React.FC = () => {
                 onClick={(e) => handleScrollTo(e, 'de-que-se-trata')}
                 className="flex items-center gap-2 px-6 py-3 text-gray-600 hover:text-black hover:bg-gray-50 rounded-full transition-all"
               >
-                  <CircleDot size={18} className="text-gray-500 group-hover:text-black" />
+                  <Lightbulb size={18} className="text-gray-500 group-hover:text-black" />
                   <span className="text-base font-medium">¿De que se trata?</span>
               </a>
 
@@ -87,7 +99,7 @@ const Navbar: React.FC = () => {
                 onClick={(e) => handleScrollTo(e, 'beneficios')}
                 className="flex items-center gap-2 px-6 py-3 text-gray-600 hover:text-black hover:bg-gray-50 rounded-full transition-all"
               >
-                  <BookOpen size={18} strokeWidth={2} className="text-gray-500 hover:text-black" />
+                  <Sparkles size={18} strokeWidth={2} className="text-gray-500 hover:text-black" />
                   <span className="text-base font-medium">Beneficios</span>
               </a>
 
@@ -97,7 +109,7 @@ const Navbar: React.FC = () => {
                 onClick={(e) => handleScrollTo(e, 'preguntas')}
                 className="flex items-center gap-2 px-6 py-3 text-gray-600 hover:text-black hover:bg-gray-50 rounded-full transition-all"
               >
-                  <DollarSign size={18} strokeWidth={2} className="text-gray-500 hover:text-black" />
+                  <HelpCircle size={18} strokeWidth={2} className="text-gray-500 hover:text-black" />
                   <span className="text-base font-medium">Preguntas</span>
               </a>
           </nav>
@@ -106,10 +118,21 @@ const Navbar: React.FC = () => {
           <div className="flex items-center gap-4">
             <button
               onClick={() => setShowModal(true)}
-              className="hidden md:flex items-center gap-2 px-8 py-3.5 rounded-full bg-black text-white text-xs font-bold uppercase tracking-widest hover:bg-[#00401a] hover:scale-105 transition-all shadow-md group"
+              className="hidden md:flex items-center gap-2 px-8 md:px-12 py-4 md:py-6 rounded-full bg-black text-white text-base md:text-lg font-bold uppercase tracking-widest hover:bg-[#00401a] hover:scale-105 hover:shadow-[0_20px_40px_-15px_rgba(0,64,26,0.5)] transition-all duration-500 group shadow-xl"
+              style={{
+                height: 'fit-content',
+                width: 'fit-content',
+                fontSize: '14px',
+                paddingTop: '8px',
+                paddingBottom: '8px',
+                paddingLeft: '18px',
+                paddingRight: '10px'
+              }}
             >
               Acceso Anticipado
-              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+              <div className="w-6 h-6 md:w-7 md:h-7 rounded-full bg-white flex items-center justify-center transition-transform group-hover:scale-110" style={{ width: '35px', height: '35px' }}>
+                <ArrowUpRight className="w-3.5 h-3.5 md:w-4 md:h-4 text-black" style={{ width: '24px', height: '24px' }} />
+              </div>
             </button>
 
             <button
@@ -141,66 +164,7 @@ const Navbar: React.FC = () => {
             </button>
       </div>
 
-      {/* Modal Overlay */}
-      {showModal && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center px-4">
-            {/* Backdrop */}
-            <div 
-                className="absolute inset-0 bg-black/60 backdrop-blur-md animate-backdrop-enter"
-                onClick={() => setShowModal(false)}
-            />
-            
-            {/* Modal Content */}
-            <div className="relative bg-white rounded-[2rem] shadow-2xl w-full max-w-3xl overflow-hidden animate-modal-enter">
-                <button 
-                    onClick={() => setShowModal(false)}
-                    className="absolute top-6 right-6 p-2 bg-white/50 hover:bg-white rounded-full transition-colors z-20 text-gray-800 backdrop-blur-md"
-                >
-                    <X size={20} />
-                </button>
-
-                {/* Top Horizontal Image */}
-                <div className="h-72 w-full relative">
-                    <img 
-                        src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
-                        alt="Workspace" 
-                        className="w-full h-full object-cover"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
-                </div>
-
-                {/* Text & Form */}
-                <div className="p-10 md:p-14 text-left bg-white">
-                    <h3 className="text-4xl md:text-5xl font-serif-display text-gray-900 mb-4">
-                        <span className="italic">Join</span> the waitlist
-                    </h3>
-                    <p className="text-gray-600 mb-8 leading-relaxed text-lg md:text-xl">
-                        Be the first to experience the future of productivity. Enter your email to get early access and exclusive updates.
-                    </p>
-
-                    <form className="flex flex-col gap-5" onSubmit={(e) => { e.preventDefault(); setShowModal(false); }}>
-                        <div>
-                            <label htmlFor="email" className="sr-only">Email address</label>
-                            <input 
-                                type="email" 
-                                id="email" 
-                                placeholder="name@company.com" 
-                                required
-                                className="w-full px-6 py-5 rounded-xl bg-gray-50 border border-gray-200 focus:border-[#00401a] focus:ring-2 focus:ring-[#00401a]/20 outline-none transition-all placeholder:text-gray-400 text-gray-900 text-lg"
-                            />
-                        </div>
-                        <button 
-                            type="submit"
-                            className="w-full py-5 rounded-xl bg-[#00401a] text-white font-bold text-sm uppercase tracking-widest hover:bg-[#003013] transition-all shadow-lg shadow-[#00401a]/20 hover:shadow-xl hover:scale-[1.01] flex items-center justify-center gap-2 group duration-300"
-                        >
-                            Get Early Access
-                            <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
-      )}
+      <WaitlistModal isOpen={showModal} onClose={() => setShowModal(false)} />
     </>
   );
 };

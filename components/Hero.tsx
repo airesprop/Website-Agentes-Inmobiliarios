@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import { ArrowRight, X } from 'lucide-react';
+import React, { useState } from 'react';
+import { ArrowUpRight } from 'lucide-react';
 import Reveal from './Reveal';
+import WaitlistModal from './WaitlistModal';
 
 const problems = [
   {
@@ -13,21 +14,12 @@ const problems = [
     text: "Llamás para coordinar visita y te dicen \"no compartimos comisión\"."
   },
   {
-    text: "Mandás Word o PDF con la información de la propiedad a tus clientes para que no vean el contacto del agente vendedor."
+    text: "Mandás un Word o PDF con la informacion de la propiedad a tus clientes para que no vean el contacto del agente vendedor."
   }
 ];
 
 const Hero: React.FC = () => {
   const [showModal, setShowModal] = useState(false);
-
-  // Close modal on Escape key
-  useEffect(() => {
-    const handleEsc = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') setShowModal(false);
-    };
-    window.addEventListener('keydown', handleEsc);
-    return () => window.removeEventListener('keydown', handleEsc);
-  }, []);
 
   return (
     <section className="relative pt-28 pb-16 md:pt-48 w-full min-h-[80vh] flex flex-col justify-between overflow-x-hidden">
@@ -72,13 +64,25 @@ const Hero: React.FC = () => {
         <div className="max-w-4xl mx-auto mb-16 md:mb-20 flex flex-col items-center">
           
           <Reveal delay={0.1}>
-            <p className="font-serif-display italic text-2xl md:text-3xl lg:text-4xl text-gray-800 mb-4 md:mb-6 tracking-wide">
-              Para agentes que están cansados de regalar clientes.
-            </p>
+            <div className="inline-flex items-center gap-3 md:gap-4 pl-2 pr-6 md:pl-3 md:pr-8 py-2 md:py-3 rounded-full border border-gray-200/50 bg-gray-50/80 backdrop-blur-md mb-8 md:mb-10 shadow-sm scale-90 md:scale-100" style={{ lineHeight: '15px', height: '58px' }}>
+              <div className="flex -space-x-3" style={{ width: '100px', height: 'fit-content' }}>
+                {[1, 2, 3].map((i) => (
+                  <img 
+                    key={i} 
+                    src={`https://i.pravatar.cc/100?img=${i + 15}`} 
+                    alt="User" 
+                    className="w-8 h-8 md:w-10 md:h-10 rounded-full border-2 border-white object-cover"
+                  />
+                ))}
+              </div>
+              <span className="text-sm md:text-lg font-medium text-gray-800 tracking-wide" style={{ fontSize: '17px' }}>
+                Para Agentes Inmobiliarios de CABA y GBA
+              </span>
+            </div>
           </Reveal>
           
           <Reveal delay={0.2}>
-            <h1 className="text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-bold tracking-tighter text-black leading-[0.95] mb-6 md:mb-8 break-words w-full">
+            <h1 className="text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-bold tracking-tighter text-black leading-[0.95] mb-6 md:mb-8 break-words w-full" style={{ fontSize: '83px' }}>
                 Dejá de Perder Clientes,
                 <br className="hidden md:block" />
                 <span className="md:hidden"> </span>
@@ -87,7 +91,7 @@ const Hero: React.FC = () => {
           </Reveal>
           
           <Reveal delay={0.3}>
-            <p className="text-base md:text-lg lg:text-xl text-gray-700 max-w-xl mx-auto mb-8 md:mb-10 leading-relaxed font-medium px-2">
+            <p className="text-base md:text-lg lg:text-xl text-gray-700 mx-auto mb-8 md:mb-10 leading-relaxed font-medium px-2" style={{ width: '640px' }}>
                 Una plataforma con TU marca que protege tu trabajo, tus clientes, y tus comisiones mientras accedes a propiedades que otros no encuentran.
             </p>
           </Reveal>
@@ -95,10 +99,20 @@ const Hero: React.FC = () => {
           <Reveal delay={0.4}>
             <button
               onClick={() => setShowModal(true)}
-              className="inline-flex items-center gap-3 px-8 md:px-12 py-4 md:py-6 rounded-full bg-black text-white text-base md:text-lg font-bold uppercase tracking-widest hover:bg-[#00401a] hover:scale-105 hover:shadow-[0_20px_40px_-15px_rgba(0,64,26,0.5)] transition-all duration-500 group shadow-xl"
+              className="inline-flex items-center gap-2 px-8 md:px-12 py-4 md:py-6 rounded-full bg-black text-white text-base md:text-lg font-bold uppercase tracking-widest hover:bg-[#00401a] hover:scale-105 hover:shadow-[0_20px_40px_-15px_rgba(0,64,26,0.5)] transition-all duration-500 group shadow-xl"
+              style={{
+                height: 'fit-content',
+                width: 'fit-content',
+                paddingTop: '10px',
+                paddingBottom: '10px',
+                paddingLeft: '20px',
+                paddingRight: '10px'
+              }}
             >
               Acceso Anticipado
-              <ArrowRight className="w-5 h-5 md:w-6 md:h-6 transition-transform group-hover:translate-x-1" />
+              <div className="w-6 h-6 md:w-7 md:h-7 rounded-full bg-white flex items-center justify-center transition-transform group-hover:scale-110" style={{ width: '35px', height: '35px' }}>
+                <ArrowUpRight className="w-3.5 h-3.5 md:w-4 md:h-4 text-black" style={{ width: '24px', height: '24px' }} />
+              </div>
             </button>
           </Reveal>
         </div>
@@ -113,11 +127,8 @@ const Hero: React.FC = () => {
             <div className="lg:w-2/5 relative lg:sticky lg:top-32 h-fit mb-8 lg:mb-0">
                 <Reveal>
                     <h2 className="text-5xl md:text-6xl lg:text-8xl font-serif-display leading-[0.9] text-gray-900 mb-4 md:mb-6">
-                    ¿Te sientes <br/> <span className="italic text-gray-400">identificado?</span>
+                    ¿Te sentis <br/> <span className="italic" style={{ color: 'rgba(0, 64, 26, 0.8)' }}>identificado?</span>
                     </h2>
-                    <p className="text-base md:text-lg text-gray-500 max-w-sm">
-                    La industria inmobiliaria tiene fricciones que consumen tu energía. Es hora de identificarlas para poder avanzar.
-                    </p>
                 </Reveal>
             </div>
 
@@ -143,66 +154,7 @@ const Hero: React.FC = () => {
 
       </div>
 
-      {/* Modal Overlay */}
-      {showModal && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center px-4 py-6 sm:py-0">
-            {/* Backdrop */}
-            <div 
-                className="absolute inset-0 bg-black/60 backdrop-blur-md animate-backdrop-enter"
-                onClick={() => setShowModal(false)}
-            />
-            
-            {/* Modal Content - Added max-h and overflow for mobile landscape/small screens */}
-            <div className="relative bg-white rounded-[1.5rem] md:rounded-[2rem] shadow-2xl w-full max-w-3xl overflow-hidden animate-modal-enter flex flex-col max-h-[90vh] md:max-h-none">
-                <button 
-                    onClick={() => setShowModal(false)}
-                    className="absolute top-4 right-4 md:top-6 md:right-6 p-2 bg-white/50 hover:bg-white rounded-full transition-colors z-20 text-gray-800 backdrop-blur-md"
-                >
-                    <X size={20} />
-                </button>
-
-                {/* Top Horizontal Image - Reduced height on mobile */}
-                <div className="h-48 md:h-72 w-full relative flex-shrink-0">
-                    <img 
-                        src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
-                        alt="Workspace" 
-                        className="w-full h-full object-cover"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
-                </div>
-
-                {/* Text & Form - Scrollable area */}
-                <div className="p-6 md:p-10 lg:p-14 text-left bg-white overflow-y-auto">
-                    <h3 className="text-3xl md:text-4xl lg:text-5xl font-serif-display text-gray-900 mb-3 md:mb-4">
-                        <span className="italic">Join</span> the waitlist
-                    </h3>
-                    <p className="text-gray-600 mb-6 md:mb-8 leading-relaxed text-base md:text-xl">
-                        Be the first to experience the future of productivity. Enter your email to get early access and exclusive updates.
-                    </p>
-
-                    <form className="flex flex-col gap-4 md:gap-5" onSubmit={(e) => { e.preventDefault(); setShowModal(false); }}>
-                        <div>
-                            <label htmlFor="email" className="sr-only">Email address</label>
-                            <input 
-                                type="email" 
-                                id="email" 
-                                placeholder="name@company.com" 
-                                required
-                                className="w-full px-5 py-4 md:px-6 md:py-5 rounded-xl bg-gray-50 border border-gray-200 focus:border-[#00401a] focus:ring-2 focus:ring-[#00401a]/20 outline-none transition-all placeholder:text-gray-400 text-gray-900 text-base md:text-lg"
-                            />
-                        </div>
-                        <button 
-                            type="submit"
-                            className="w-full py-4 md:py-5 rounded-xl bg-[#00401a] text-white font-bold text-sm uppercase tracking-widest hover:bg-[#003013] transition-all shadow-lg shadow-[#00401a]/20 hover:shadow-xl hover:scale-[1.01] flex items-center justify-center gap-2 group duration-300"
-                        >
-                            Get Early Access
-                            <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
-      )}
+      <WaitlistModal isOpen={showModal} onClose={() => setShowModal(false)} />
     </section>
   );
 };
